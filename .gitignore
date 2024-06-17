@@ -14,6 +14,9 @@
 .cxx
 local.properties
 .idea
-.caches
-.tmp
-.daemon
+/caches
+/tmp
+/daemon
+/native
+
+/wrapper
