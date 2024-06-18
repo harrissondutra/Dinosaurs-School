@@ -123,7 +123,7 @@ fun LoginScreen() {
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp)
                     ) {
-                        Text("Login")
+                        Text("Log In")
                     }
                     Spacer(modifier = Modifier.height(16.dp))
 
