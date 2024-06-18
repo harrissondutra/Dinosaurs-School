@@ -35,11 +35,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.estudo.dinosaursschool.activities.App
 import com.estudo.dinosaursschool.ui.theme.DinosaursSchoolTheme
+import com.estudo.dinosaursschool.ui.theme.GreenPrincipal
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Toolbar() {
+fun Toolbar(title: String, action:String? = null) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
@@ -54,17 +55,19 @@ fun Toolbar() {
                     titleContentColor = Color.Black,
                 ),
                 title = {
-                    Box(modifier = Modifier.fillMaxWidth()
+                    Box(modifier = Modifier
+                        .fillMaxWidth()
                         .fillMaxHeight(),
                         contentAlignment = Alignment.Center){
                         Text(
-                            "Log In",
+                            title,
                             fontWeight = FontWeight(600),
                             fontSize = 36.sp,
                         )
                     }
                 },
                 navigationIcon = {
+
                    /* IconButton(onClick = { *//* do something *//* }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
@@ -73,6 +76,13 @@ fun Toolbar() {
                     }*/
                 },
                 actions = {
+                    Box(modifier = Modifier.padding(16.dp),
+                        contentAlignment = Alignment.Center){
+                        if (action != null) {
+                            Text(text = action, color = GreenPrincipal, fontSize = 20.sp)
+                        }
+                    }
+
                     /*IconButton(onClick = { *//* do something *//* }) {
                         Icon(
                             imageVector = Icons.Filled.Menu,
@@ -80,6 +90,7 @@ fun Toolbar() {
                         )
                     }*/
                 },
+
                 scrollBehavior = scrollBehavior,
             )
         },
@@ -97,7 +108,7 @@ fun Toolbar() {
 private fun ToolbarPreview() {
     DinosaursSchoolTheme {
         Surface {
-           Toolbar()
+           Toolbar("Default")
         }
     }
 }

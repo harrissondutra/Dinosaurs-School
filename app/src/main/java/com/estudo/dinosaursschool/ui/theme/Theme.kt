@@ -13,13 +13,13 @@ import androidx.compose.ui.platform.LocalContext
 private val DarkColorScheme = darkColorScheme(
     primary = GreenPrincipal,
     secondary = GreenSecondary,
-    tertiary = Pink80
+    tertiary = GreenPrincipal
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = GreenPrincipal,
     secondary = GreenSecondary,
-    tertiary = Pink40
+    tertiary = GreenPrincipal
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -50,7 +50,7 @@ fun DinosaursSchoolTheme(
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = LightColorScheme,
         typography = Typography,
         content = content
     )

@@ -1,6 +1,6 @@
 package com.estudo.dinosaursschool.activities
 
-import android.opengl.Visibility
+import android.R
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -50,11 +50,11 @@ import com.estudo.dinosaursschool.ui.components.Toolbar
 import com.estudo.dinosaursschool.ui.theme.DinosaursSchoolTheme
 import com.estudo.dinosaursschool.ui.theme.GreenPrincipal
 
-class LoginScreenActivity : ComponentActivity() {
+class RegisterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge( statusBarStyle = SystemBarStyle.dark(
-            scrim = GreenPrincipal.toArgb(),
+            scrim = Color.White.toArgb(),
         ),
             navigationBarStyle = SystemBarStyle.light(
                 scrim = Color.White.toArgb(),
@@ -62,7 +62,7 @@ class LoginScreenActivity : ComponentActivity() {
             ))
         setContent {
             DinosaursSchoolTheme {
-                LoginScreen()
+                RegisterScreen()
             }
         }
     }
@@ -71,18 +71,40 @@ class LoginScreenActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun RegisterScreen() {
     var passwordVisible by remember { mutableStateOf(false) }
     Column(
         Modifier
             .fillMaxWidth()
     ) {
         Scaffold (topBar = {
-            Toolbar("Login")
+            Toolbar("Sign Up", "Login")
         }){
             paddingValues ->
             Box(modifier = Modifier.padding(paddingValues)){
                 Column (Modifier.padding(16.dp)){
+                    var name by remember {
+                        mutableStateOf("")
+                    }
+                    OutlinedTextField(
+                        value = name,
+                        onValueChange = {
+                            name = it
+                        },
+                        Modifier.fillMaxWidth(),
+                        label = {
+                            Text(text = "Nome")
+                        },
+                        placeholder = {
+                            Text(text = "Ex: Alberto Craveiro")
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Text,
+                            imeAction = ImeAction.Next,
+                            capitalization = KeyboardCapitalization.Words
+                        )
+                    )
+
                     var email by remember {
                         mutableStateOf("")
                     }
@@ -96,13 +118,12 @@ fun LoginScreen() {
                             Text(text = "Email")
                         },
                         placeholder = {
-                            Text(text = "Ex: seunome@gmail.com")
+                            Text(text = "Ex: Digite sua senha")
                         },
                         keyboardOptions = KeyboardOptions(
                             keyboardType = KeyboardType.Email,
                             imeAction = ImeAction.Next,
-                            capitalization = KeyboardCapitalization.Words
-                        )
+                        ),
                     )
 
                     var password by remember {
@@ -147,9 +168,9 @@ fun LoginScreen() {
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp)
                     ) {
-                        Text("Log In")
+                        Text("Sign Up")
                     }
-                    Spacer(modifier = Modifier.height(16.dp))
+                   /* Spacer(modifier = Modifier.height(16.dp))
 
                    Box(modifier = Modifier.fillMaxWidth(),
                        contentAlignment = Alignment.Center){
@@ -158,9 +179,9 @@ fun LoginScreen() {
                            color = GreenPrincipal,
                            modifier = Modifier
                                .padding(horizontal = 16.dp)
-                               .clickable { /* Handle forgot password logic */ },
+                               .clickable { *//* Handle forgot password logic *//* },
                        )
-                   }
+                   }*/
                 }
             }
 
@@ -172,6 +193,6 @@ fun LoginScreen() {
 
 @Preview(showSystemUi = true)
 @Composable
-private fun LoginScreenPreview() {
-    LoginScreen()
+private fun RegisterPreview() {
+    RegisterScreen()
 }
