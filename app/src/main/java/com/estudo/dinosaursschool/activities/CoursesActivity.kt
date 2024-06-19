@@ -33,6 +33,7 @@ import com.estudo.dinosaursschool.ui.components.SearchTextField
 import com.estudo.dinosaursschool.ui.components.Toolbar
 import com.estudo.dinosaursschool.ui.theme.DinosaursSchoolTheme
 import com.estudo.dinosaursschool.ui.theme.GreenPrincipal
+import com.estudo.dinosaursschool.ui.theme.GreenSecondary
 
 class CoursesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +66,9 @@ fun CoursesScreen(
         Toolbar(
             title = "Cursos",
             navigate = "Back",
-            action = "Filter"
+            action = "Filter",
+            color = GreenPrincipal.toString(),
+            textColor = GreenSecondary.toString()
         )
         var text by remember { mutableStateOf(searchText) }
 

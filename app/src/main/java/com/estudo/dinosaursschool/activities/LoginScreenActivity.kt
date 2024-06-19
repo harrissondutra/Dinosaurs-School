@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import com.estudo.dinosaursschool.ui.components.Toolbar
 import com.estudo.dinosaursschool.ui.theme.DinosaursSchoolTheme
 import com.estudo.dinosaursschool.ui.theme.GreenPrincipal
+import com.estudo.dinosaursschool.ui.theme.GreenSecondary
 
 class LoginScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +79,7 @@ fun LoginScreen() {
             .fillMaxWidth()
     ) {
         Scaffold (topBar = {
-            Toolbar("Login")
+            Toolbar("Login", color = GreenPrincipal.toString(), textColor = GreenSecondary.toString())
         }){
             paddingValues ->
             Box(modifier = Modifier.padding(paddingValues)){

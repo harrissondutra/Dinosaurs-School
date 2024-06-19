@@ -18,7 +18,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.DinosaursSchool">
-           <!-- <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -38,6 +38,17 @@
 
         <activity
             android:name=".activities.CoursesActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DinosaursSchool">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".activities.ClassesActivity"
             android:exported="true"
             android:theme="@style/Theme.DinosaursSchool">
             <intent-filter>

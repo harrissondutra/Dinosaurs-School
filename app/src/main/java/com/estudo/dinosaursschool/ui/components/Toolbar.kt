@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.graphics.toColorInt
 import com.estudo.dinosaursschool.ui.theme.DinosaursSchoolTheme
 import com.estudo.dinosaursschool.ui.theme.GreenPrincipal
 
@@ -37,9 +38,10 @@ fun Toolbar(
     title: String,
     navigate: String? = null,
     action: String? = null,
+    color: String = "#FFFFFF",
+    textColor: String = "#000000"
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
-
     Scaffold(
         modifier = Modifier
             .nestedScroll(scrollBehavior.nestedScrollConnection)
@@ -50,8 +52,8 @@ fun Toolbar(
         topBar = {
             CenterAlignedTopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White,
-                    titleContentColor = Color.Black,
+                    containerColor = Color(color.toColorInt()),
+                    titleContentColor = Color(textColor.toColorInt()),
                 ),
                 title = {
                     Box(
@@ -122,7 +124,11 @@ fun Toolbar(
 private fun ToolbarPreview() {
     DinosaursSchoolTheme {
         Surface {
-            Toolbar("Default")
+            Toolbar(
+                "Default",
+                color = "#FFFFFF",
+                textColor = "#000000"
+            )
         }
     }
 }

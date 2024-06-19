@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import com.estudo.dinosaursschool.ui.components.Toolbar
 import com.estudo.dinosaursschool.ui.theme.DinosaursSchoolTheme
 import com.estudo.dinosaursschool.ui.theme.GreenPrincipal
+import com.estudo.dinosaursschool.ui.theme.GreenSecondary
 
 class RegisterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +79,7 @@ fun RegisterScreen() {
             .fillMaxWidth()
     ) {
         Scaffold (topBar = {
-            Toolbar("Sign Up", "Login")
+            Toolbar("Sign Up", color = Color.White.toString(), textColor = GreenPrincipal.toArgb().toString())
         }){
             paddingValues ->
             Box(modifier = Modifier.padding(paddingValues)){
