@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dinosaurs School</string>
+    <string name="ig_bottom_placeholder">Teste Placeholder</string>
 </resources>

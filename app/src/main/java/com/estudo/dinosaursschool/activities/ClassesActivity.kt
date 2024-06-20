@@ -100,7 +100,10 @@ fun ClassesScreen(
                     val title = section.key
                     val classes = section.value
                     items(classes) { c ->
-                        ClassesItem(classes = c) // Pega todos os Cursos
+                        CardClassesItem(
+                            classes = c,
+                            Modifier.padding(horizontal = 16.dp),
+                        )
                     }
                 }
             } else {

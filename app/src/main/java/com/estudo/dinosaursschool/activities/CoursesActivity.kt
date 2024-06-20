@@ -67,8 +67,8 @@ fun CoursesScreen(
             title = "Cursos",
             navigate = "Back",
             action = "Filter",
-            color = GreenPrincipal.toString(),
-            textColor = GreenSecondary.toString()
+            color = "#FFFFFF",
+            textColor = "#000000"
         )
         var text by remember { mutableStateOf(searchText) }
 

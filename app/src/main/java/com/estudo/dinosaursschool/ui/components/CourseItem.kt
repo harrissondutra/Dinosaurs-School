@@ -53,9 +53,12 @@ fun CoursesItem(course: Course, modifier: Modifier = Modifier) {
             Text(
                 text = course.name,
                 Modifier
-                    .fillMaxWidth().padding(start = 16.dp, top = 3.dp)
+                    .fillMaxWidth().padding(start = 16.dp, top = 10.dp)
             )
-            Text(text = course.description.toString(), Modifier.padding(start = 16.dp, top = 8.dp))
+            Text(
+                text = course.description.toString(),
+                Modifier.padding(start = 16.dp, top = 8.dp, bottom = 16.dp)
+            )
         }
     }
 }

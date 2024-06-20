@@ -34,7 +34,7 @@ fun CardClassesItem(
     Card(
         modifier
             .fillMaxWidth()
-            .heightIn(150.dp)
+            .heightIn(280.dp)
             .shadow(elevation),
     ) {
         Column {
@@ -43,7 +43,7 @@ fun CardClassesItem(
                 contentDescription = null,
                 Modifier
                     .fillMaxWidth()
-                    .height(100.dp),
+                    .height(220.dp),
                 placeholder = painterResource(id = R.drawable.placeholder),
                 contentScale = ContentScale.Crop
             )
@@ -74,8 +74,8 @@ fun CardClassesItem(
 private fun CardProductItemPreview() {
     DinosaursSchoolTheme {
         Surface {
-            CardCourseItem(
-                course = Course(
+            CardClassesItem(
+                classes = Classes(
                     name = "Teste",
 
                 ),
@@ -89,8 +89,8 @@ private fun CardProductItemPreview() {
 private fun CardProductItemWithDescription() {
     DinosaursSchoolTheme {
         Surface {
-            CardCourseItem(
-                course = Course(
+            CardClassesItem(
+                classes = Classes(
                     name = "Teste",
                     description = "Teste de descrição"
                 ),
