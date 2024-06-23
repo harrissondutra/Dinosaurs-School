@@ -1,6 +1,5 @@
 package com.estudo.dinosaursschool.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,15 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = GreenPrincipal,
+    secondary = GreenSecondary,
+    tertiary = GreenPrincipal
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = GreenPrincipal,
+    secondary = GreenSecondary,
+    tertiary = GreenPrincipal
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -51,7 +50,7 @@ fun DinosaursSchoolTheme(
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = LightColorScheme,
         typography = Typography,
         content = content
     )
